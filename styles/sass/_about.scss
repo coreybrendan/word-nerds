@@ -1,0 +1,153 @@
+fieldset {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 450px;
+  background-image: url(../assets/book-stack.jpg);
+  background-size: cover;
+  background-position: bottom;
+  border: none;
+  padding: 15px;
+  margin: 60px 0;
+  position: relative;
+}
+
+fieldset::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #333;
+  opacity: 0.4;
+}
+
+label {
+  display: block;
+  margin: 20px 0;
+  color: #fff;
+  font-weight: 700;
+  font-family: $base-font;
+}
+
+button {
+  z-index: 10;
+  display: block;
+  padding: 8px 30px;
+  margin: 25px 0 35px 0;
+  border: 2px solid #fff;
+  border-radius: 3%;
+  background-color: rgba(255,255,255,0);
+  font-family: $base-font;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+button:hover,
+button:focus {
+  color: #333;
+  background-color: rgba(255,255,255,0.8);
+}
+
+/* radio button styling */
+.radio-container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  padding-right: 35px;
+  font-size: 1.75rem;
+  user-select: none;
+}
+
+input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.new-radio {
+  position: absolute;
+  top: 10px;
+  right: -1px;
+  height: 25px;
+  width: 25px;
+  background-color: #E1DCD5;
+  border-radius: 50%;
+}
+
+.new-radio:focus {
+  outline: 2px solid rgba(220,205,86, 0.8);
+}
+
+input:hover ~ .new-radio:hover,
+input:focus ~ .new-radio:focus {
+  background-color: #C6B9AB;
+}
+
+// .radio-container:hover input ~ .new-radio,
+// .radio-container:focus input ~ .new-radio {
+//   background-color: #C6B9AB;
+// }
+
+input:checked ~ .new-radio {
+  background-color: #333;
+}
+
+.new-radio::after {
+  content: "";
+  position: absolute;
+  display: none;
+  top: 8px;
+  left: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+input:checked ~ .new-radio::after {
+  display: block;
+  content: "";
+}
+
+// end of form styling
+
+.about span {
+  display: block;
+  padding-top: 20px;
+}
+
+.form-about {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about {
+  width: calc(100% / 2 - 50px);
+  align-self: center;
+}
+
+.about h2 {
+  font-family: $header-font;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  width: min-content;
+}
+
+.underline {
+  box-shadow: -10px 17px 0 -10px rgba(220,205,86);
+  transition: box-shadow 250ms ease-in-out;
+}
+
+.underline:hover {
+  box-shadow: none;
+}
+
+.about p {
+  font-family: $base-font;
+  line-height: 35px;
+}
